@@ -1,5 +1,6 @@
 import { RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { UIProvider } from "@/context/UIContext";
@@ -22,6 +23,7 @@ export default function App() {
         <UIProvider>
           <AuthProvider>
             <RouterProvider router={router} />
+            <Analytics />
           </AuthProvider>
         </UIProvider>
       </ThemeProvider>
