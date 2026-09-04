@@ -409,7 +409,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const resume = await loadOwnedResume(req);
 
-    const { fromV, toV } = await Promise.all([
+    const [fromV, toV] = await Promise.all([
       loadVersion(resume._id, req.query.from),
       loadVersion(resume._id, req.query.to),
     ]);
